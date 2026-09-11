@@ -35,20 +35,20 @@ class MctcLib(MesonPackage, CMakePackage):
     version("0.3.0", sha256="81f3edbf322e6e28e621730a796278498b84af0f221f785c537a315312059bf0")
 
     variant(
-            "shared", 
-            default=True, 
-            description="Build shared libraries",
-            when="build_system=cmake",
-        )
+        "shared",
+        default=True,
+        description="Build shared libraries",
+        when="build_system=cmake",
+    )
     # redefine since mctc-lib does not seem to support building both at once
     variant(
-            "default_library",
-            default="shared",
-            values=("shared", "static"),
-            multi=False,
-            description="Build shared libs or static libs",
-            when="build_system=meson",
-        )
+        "default_library",
+        default="shared",
+        values=("shared", "static"),
+        multi=False,
+        description="Build shared libs or static libs",
+        when="build_system=meson",
+    )
     variant("json", default=False, description="Enable support for JSON")
     variant("openmp", default=False, description="Enable OpenMP support")
 
