@@ -48,7 +48,7 @@ class Pmdk(Package):
     depends_on("pandoc", when="+doc", type="build")
     depends_on("pkgconfig", when="@1.12.1:", type="build")
 
-    # Spack does not currently have recipes for libndctl, libdaxctl 
+    # Spack does not currently have recipes for libndctl, libdaxctl
     # depends_on("libdaxctl", when="+ndctl")
     # depends_on("libndctl", when="+ndctl")
     # so for now just conflict on +ndctl
