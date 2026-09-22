@@ -40,6 +40,7 @@ class Pmdk(Package):
     depends_on("c", type="build")  # generated
     depends_on("cxx", type="build")  # generated
 
+    depends_on("binutils", type="build")
     depends_on("cmake", type="build")
     depends_on("gmake", type="build")
     depends_on("libfabric", when="+rpmem")
