@@ -45,6 +45,7 @@ class Pmdk(Package):
     depends_on("gmake", type="build")
     depends_on("libfabric", when="+rpmem")
     depends_on("ncurses", when="@1.6:")
+    depends_on("pandoc", when="+doc", type="build")
     depends_on("pkgconfig", when="@1.12.1:", type="build")
 
     # documentation requires doxygen and a bunch of other dependencies
