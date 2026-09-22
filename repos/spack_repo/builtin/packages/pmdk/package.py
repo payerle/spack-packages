@@ -40,11 +40,12 @@ class Pmdk(Package):
     depends_on("c", type="build")  # generated
     depends_on("cxx", type="build")  # generated
 
-    depends_on("gmake", type="build")
     depends_on("cmake", type="build")
-    depends_on("pkgconfig", when="@1.12.1:", type="build")
-    depends_on("ncurses", when="@1.6:")
+    depends_on("gmake", type="build")
     depends_on("libfabric", when="+rpmem")
+    depends_on("ncurses", when="@1.6:")
+    depends_on("pkgconfig", when="@1.12.1:", type="build")
+
     # documentation requires doxygen and a bunch of other dependencies
     patch("0001-make-doc-building-explicit.patch", when="@:1.7")
     patch("pmem-1.8-disable-docs.patch", when="@1.8")
