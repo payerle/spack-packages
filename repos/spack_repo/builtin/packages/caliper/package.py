@@ -281,6 +281,11 @@ class Caliper(CachedCMakePackage, CudaPackage, ROCmPackage):
     def cmake_args(self):
         return []
 
+    def flag_handler(self, name: str, flags: List[str]):
+        if name in ( "cflags", "cxxflags" ):
+            flags.append("-fpermissive")
+        return (flags, None, None)
+
     def setup_run_environment(self, env: EnvironmentModifications) -> None:
         if self.spec.satisfies("+python"):
             env.prepend_path("PYTHONPATH", self.spec.prefix.join(python_platlib))
