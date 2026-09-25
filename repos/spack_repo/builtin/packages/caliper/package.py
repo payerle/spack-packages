@@ -282,7 +282,7 @@ class Caliper(CachedCMakePackage, CudaPackage, ROCmPackage):
         return []
 
     def flag_handler(self, name: str, flags: List[str]):
-        if name in ( "cflags", "cxxflags" ):
+        if name in ("cflags", "cxxflags"):
             flags.append("-fpermissive")
         return (flags, None, None)
 
